@@ -1,0 +1,134 @@
+:root {
+  --fc-1: #ffffff;
+  --fc-2: #000000;
+  --line-h: 30.48px;
+  --line-h-m: 24.38px;
+
+  /* Navigation bar, Buttons and Card titles. */
+  --ff: "Montserrat", sans-serif;
+  --fw-bold: bold;
+  --fs-bold: 25px;
+  --fs-m: 20px;
+
+  /* Montserrat Black: Hero title and Section title. */
+  --fw-black: 900;
+  --fs-black: 80px;
+  --line-h-black: 97.52px;
+
+  /* Montserrat Regular: all Paragraphs. */
+  --fw-regular: 400;
+  --fs-regular: 25px;
+}
+
+/* Main styles */
+html,
+body {
+  font-family: var(--ff);
+  margin: 0;
+}
+.navigation a,
+button,
+.card-title {
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-bold);
+  line-height: var(--line-h);
+}
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+section > .title {
+  font-weight: var(--fw-black);
+  font-size: var(--fs-black);
+  line-height: var(--line-h-black);
+}
+p {
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-regular);
+  line-height: var(--line-h);
+}
+
+/* Navigation bar */
+.navigation {
+  overflow: hidden;
+  position: fixed;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  flex: 1;
+  background: rgba(0, 0, 0, 0.45);
+  width: 100%;
+  height: 115px;
+  left: 0px;
+  top: 0px;
+}
+.navigation a {
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--fc-1);
+  margin: 10px;
+}
+.logo {
+  display: flex;
+  flex: 20%;
+  justify-content: flex-start;
+}
+.nav-buttons {
+  display: flex;
+  flex: 80%;
+  justify-content: flex-end;
+  margin: 10px;
+}
+.dots {
+  color: var(--fc-1);
+  font-size: 50px;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 52px;
+  height: 52px;
+}
+@media all and (max-width: 376px) {
+  .navigation {
+    font-size: var(--fs-m);
+  }
+  .logo {
+    flex: 30%;
+  }
+  .nav-buttons {
+    flex: 30%;
+  }
+  .nav-buttons a {
+    display: none;
+  }
+  .dots {
+    visibility: visible;
+  }
+}
+
+/* Hero */
+.hero-section {
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.45);
+  color: var(--fc-1);
+}
+
+.picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: -1;
+}
+img {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
