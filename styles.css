@@ -4,10 +4,11 @@
   --line-h: 30.48px;
   --line-h-m: 24.38px;
 
-  /* Navigation bar, Buttons and Card titles. */
+  --fs: 25px;
   --ff: "Montserrat", sans-serif;
+
+  /* Navigation bar, Buttons and Card titles. */
   --fw-bold: bold;
-  --fs-bold: 25px;
   --fs-m: 20px;
 
   /* Montserrat Black: Hero title and Section title. */
@@ -17,7 +18,14 @@
 
   /* Montserrat Regular: all Paragraphs. */
   --fw-regular: 400;
-  --fs-regular: 25px;
+
+  /* @media */
+  --fs-hero-m: 41px;
+  --fs-text-m: 18px;
+  --fs-section-title-m: 35px;
+  --fs-card-title-m: 30px;
+  --fs-card-text-m: 16px;
+  --fs-card-button-m: 21px;
 }
 
 /* Main styles */
@@ -30,7 +38,10 @@ body {
 button,
 .card-title {
   font-weight: var(--fw-bold);
-  font-size: var(--fs-bold);
+}
+.navigation a,
+button {
+  font-size: var(--fs);
   line-height: var(--line-h);
 }
 section {
@@ -43,13 +54,23 @@ section {
 }
 section > .title {
   font-weight: var(--fw-black);
-  font-size: var(--fs-black);
-  line-height: var(--line-h-black);
+  text-transform: uppercase;
 }
 p {
   font-weight: var(--fw-regular);
-  font-size: var(--fs-regular);
+  margin: 0;
+  text-align: center;
+}
+button {
+  width: 267px;
+  height: 74px;
+  box-sizing: border-box;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-size: var(--fs);
+  font-weight: var(--fw-bold);
   line-height: var(--line-h);
+  cursor: pointer;
 }
 
 /* Navigation bar */
@@ -65,6 +86,7 @@ p {
   height: 115px;
   left: 0px;
   top: 0px;
+  z-index: 2;
 }
 .navigation a {
   text-decoration: none;
@@ -75,12 +97,12 @@ p {
 }
 .logo {
   display: flex;
-  flex: 20%;
+  flex: 30%;
   justify-content: flex-start;
 }
 .nav-buttons {
   display: flex;
-  flex: 80%;
+  flex: 70%;
   justify-content: flex-end;
   margin: 10px;
 }
@@ -94,6 +116,61 @@ p {
   width: 52px;
   height: 52px;
 }
+
+/* Hero */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.45);
+  color: var(--fc-1);
+}
+.hero-section .title {
+  font-size: var(--fs-black);
+  line-height: var(--line-h-black);
+}
+.hero-section .text {
+  font-size: var(--fs);
+  line-height: var(--line-h);
+  width: 70%;
+  margin-bottom: 20px;
+}
+.button-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 10px;
+}
+.button-wrapper > .btn {
+  border: 5px solid #ffffff;
+  color: var(--fc-1);
+}
+.button-wrapper > .btn:last-child {
+  margin-left: 20px;
+}
+.button-wrapper > .btn:hover {
+  color: var(--fc-2);
+  background-color: var(--fc-1);
+}
+.picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: -1;
+}
+img {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+/* @media all and (max-width: 768px) {
+  .navigation a {
+    font-size: 100%;
+  }
+} */
 @media all and (max-width: 376px) {
   .navigation {
     font-size: var(--fs-m);
@@ -110,25 +187,34 @@ p {
   .dots {
     visibility: visible;
   }
-}
-
-/* Hero */
-.hero-section {
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.45);
-  color: var(--fc-1);
-}
-
-.picture {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100%;
-  z-index: -1;
-}
-img {
-  position: relative;
-  width: 100%;
-  height: 100vh;
+  .picture {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+  }
+  img {
+    height: 100vh;
+    width: auto;
+    position: absolute;
+    right: 0;
+  }
+  .hero-section .title {
+    font-weight: var(--fw-black);
+    font-size: var(--fs-hero-m);
+    line-height: 49.98px;
+  }
+  .hero-section .text {
+    font-size: var(--fs-text-m);
+    line-height: 21.94px;
+  }
+  .button-wrapper {
+    flex-direction: column;
+    font-size: var(--fs);
+    line-height: var(--line-h);
+    margin: 30px auto;
+  }
+  .button-wrapper > .btn:last-child {
+    margin-left: 0;
+    margin-top: 40px;
+  }
 }
