@@ -1,4 +1,8 @@
 :root {
+  --fc-instagram: #c13584;
+  --fc-linkedin: #2867b2;
+  --fc-twitter: #1da1f2;
+
   --fc-1: #ffffff;
   --fc-2: #000000;
   --line-h: 30.48px;
@@ -184,6 +188,7 @@ img {
   justify-content: space-around;
   padding: 0;
   margin: 0;
+  width: 100%;
 }
 .cards > .card {
   display: flex;
@@ -222,6 +227,56 @@ img {
     font-size: 100%;
   }
 } */
+
+.contacts {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  flex: 1;
+  width: 100%;
+  height: 135px;
+  background: rgba(0, 0, 0, 0.85);
+}
+.icons {
+  flex: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 20px;
+  font-size: var(--fs);
+  font-weight: var(--fw-regular);
+}
+.instagram,
+.linkedin,
+.twitter {
+  margin: 10px;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+}
+.instagram {
+  color: var(--fc-instagram);
+}
+.linkedin {
+  color: var(--fc-linkedin);
+}
+.twitter {
+  color: var(--fc-twitter);
+}
+
+.copyright {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 50%;
+  color: var(--fc-1);
+  font-size: var(--fs);
+  font-weight: var(--fw-regular);
+  margin: 20px;
+}
+.copyright .text {
+  margin-left: 5px;
+}
 
 @media all and (max-width: 376px) {
   .navigation {
@@ -280,5 +335,19 @@ img {
   }
   .card-btn {
     font-size: var(--fs-card-button-m);
+  }
+  .contacts {
+    height: 195px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .icons {
+    margin: 5px auto;
+    align-items: center;
+  }
+  .copyright {
+    margin: 5px auto;
   }
 }
