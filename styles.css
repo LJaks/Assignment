@@ -83,12 +83,13 @@ button {
   font-weight: var(--fw-bold);
   line-height: var(--line-h);
   cursor: pointer;
+  outline: none;
 }
 
 /* Navigation bar */
 .navigation {
   overflow: hidden;
-  position: fixed;
+  position: absolute;
   display: flex;
   flex-flow: row;
   align-items: center;
@@ -96,16 +97,17 @@ button {
   background: rgba(0, 0, 0, 0.45);
   width: 100%;
   height: 115px;
-  left: 0px;
-  top: 0px;
+  top: 0;
   z-index: 2;
+  padding: 0 67px;
+  box-sizing: border-box;
 }
 .navigation a {
   text-decoration: none;
   text-transform: uppercase;
   text-align: center;
+  align-self: center;
   color: var(--fc-1);
-  margin: 10px;
 }
 .logo {
   display: flex;
@@ -116,7 +118,9 @@ button {
   display: flex;
   flex: 70%;
   justify-content: flex-end;
-  margin: 10px;
+}
+.blogs {
+  margin: 0 66px;
 }
 .dots {
   color: var(--fc-1);
@@ -178,28 +182,36 @@ img {
   width: 100%;
   height: 100vh;
 }
+.card-section {
+  justify-content: flex-start;
+  padding: 163px 0 627px 0;
+  box-sizing: border-box;
+}
 .card-section .title {
   font-size: var(--fs-section-title);
   font-weight: var(--fw-black);
+  margin-top: 0;
+  margin-bottom: 130px;
 }
 .cards {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  padding: 0;
   margin: 0;
   width: 100%;
+  box-sizing: border-box;
 }
 .cards > .card {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: space-between;
   align-items: center;
-  width: 347px;
+  max-width: 347px;
   height: 505px;
   border: 3px solid var(--fc-2);
-  padding: 10px;
-  margin: 30px;
+  padding: 60px 21px 62px 29px;
+  margin: 30px 67px;
+  flex: 0 0 33.333%;
 }
 .card-title {
   font-size: var(--fs-card-title);
@@ -210,13 +222,14 @@ img {
   font-size: var(--fs-card-text);
   font-weight: var(--fw-regular);
   line-height: 26px;
-  width: 80%;
-  margin: 0 20px 40px 20px;
+  justify-self: flex-start;
+  height: 100%;
 }
 .card-btn {
   font-size: var(--fs-card-button);
   font-weight: var(--fw-bold);
-  margin: 20px auto;
+  width: 267px;
+  min-height: 74px;
 }
 .card-btn:hover {
   color: var(--fc-1);
@@ -236,20 +249,21 @@ img {
   width: 100%;
   height: 135px;
   background: rgba(0, 0, 0, 0.85);
+  box-sizing: border-box;
+  padding: 0px 65px;
 }
 .icons {
   flex: 50%;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  margin: 20px;
+  align-items: center;
   font-size: var(--fs);
   font-weight: var(--fw-regular);
 }
 .instagram,
 .linkedin,
 .twitter {
-  margin: 10px;
   text-align: center;
   width: 30px;
   height: 30px;
@@ -259,6 +273,7 @@ img {
 }
 .linkedin {
   color: var(--fc-linkedin);
+  margin: 0px 46px;
 }
 .twitter {
   color: var(--fc-twitter);
@@ -272,7 +287,6 @@ img {
   color: var(--fc-1);
   font-size: var(--fs);
   font-weight: var(--fw-regular);
-  margin: 20px;
 }
 .copyright .text {
   margin-left: 5px;
@@ -281,6 +295,7 @@ img {
 @media all and (max-width: 376px) {
   .navigation {
     font-size: var(--fs-m);
+    padding: 0 19px;
   }
   .logo {
     flex: 30%;
@@ -305,6 +320,7 @@ img {
     position: absolute;
     right: 0;
   }
+
   .hero-section .title {
     font-weight: var(--fw-black);
     font-size: var(--fs-hero-m);
@@ -324,8 +340,16 @@ img {
     margin-left: 0;
     margin-top: 40px;
   }
+  .card-section {
+    padding: 108px 0 190px 0;
+  }
   .card-section .title {
     font-size: var(--fs-section-title-m);
+    margin-bottom: 17px;
+  }
+  .card {
+    margin: 30px 71px;
+    max-height: 445.33px;
   }
   .card-title {
     font-size: var(--fs-card-title-m);
@@ -344,8 +368,12 @@ img {
     margin: 0 auto;
   }
   .icons {
-    margin: 5px auto;
-    align-items: center;
+    flex-direction: row-reverse;
+    max-height: 30px;
+    padding-top: 59px;
+  }
+  .linkedin {
+    margin: 0px 65px;
   }
   .copyright {
     margin: 5px auto;
