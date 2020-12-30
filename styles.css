@@ -139,31 +139,36 @@ button {
   height: 100vh;
   background: rgba(0, 0, 0, 0.45);
   color: var(--fc-1);
+  box-sizing: border-box;
+  padding: 249px 0 251px 0;
+  justify-content: space-between;
 }
 .hero-section .title {
   font-size: var(--fs-black);
   line-height: var(--line-h-black);
+  margin-top: 0;
+  margin-bottom: 56px;
 }
 .hero-section .text {
   font-size: var(--fs);
   line-height: var(--line-h);
-  width: 70%;
-  margin-bottom: 20px;
+  margin: 0 30px 56px 30px;
+  max-width: 984px;
+  justify-self: flex-start;
+  height: 100%;
 }
 .button-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 80%;
-  margin: 10px;
 }
 .button-wrapper > .btn {
   border: 5px solid #ffffff;
   color: var(--fc-1);
 }
 .button-wrapper > .btn:last-child {
-  margin-left: 20px;
+  margin-left: 48px;
 }
 .button-wrapper > .btn:hover {
   color: var(--fc-2);
@@ -320,25 +325,29 @@ img {
     position: absolute;
     right: 0;
   }
-
+  .hero-section {
+    height: 100vh;
+    padding: 157px 0 145px 0;
+  }
   .hero-section .title {
     font-weight: var(--fw-black);
     font-size: var(--fs-hero-m);
     line-height: 49.98px;
+    margin-bottom: 53px;
   }
   .hero-section .text {
     font-size: var(--fs-text-m);
     line-height: 21.94px;
+    margin: 0 48px 93px 48px;
   }
   .button-wrapper {
     flex-direction: column;
     font-size: var(--fs);
     line-height: var(--line-h);
-    margin: 30px auto;
   }
   .button-wrapper > .btn:last-child {
     margin-left: 0;
-    margin-top: 40px;
+    margin-top: 51px;
   }
   .card-section {
     padding: 108px 0 190px 0;
